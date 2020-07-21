@@ -2,7 +2,7 @@
 import math
 import glob
 import re
-from os import mkdir
+from os import mkdir, sep
 from PIL import Image
 
 tg_size = 512
@@ -31,7 +31,7 @@ for path in files:
     im.thumbnail((tg_size, tg_size), Image.ANTIALIAS)
     path = re.sub("\.jpg$|\.png$", "", path)
     path = path + ".png"
-    im.save("result/" + path, "PNG")
+    im.save("result" + sep + path, "PNG")
     print("saved as png")
 
 print("Done!")
